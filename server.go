@@ -28,8 +28,8 @@ type Server struct {
 }
 
 type Route struct {
-	path    string
-	handler Handler
+	Path    string
+	Handler Handler
 }
 
 type Router struct {
@@ -46,8 +46,8 @@ func (r *Router) Add(route Route) {
 
 func (r *Router) Handle(req *Request) *Response {
 	for _, route := range r.routes {
-		if route.path == req.Path || matchRegex(route.path, req.Path) {
-			return route.handler(req)
+		if route.Path == req.Path || matchRegex(route.Path, req.Path) {
+			return route.Handler(req)
 		}
 	}
 	return &Response{
