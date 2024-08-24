@@ -1,4 +1,4 @@
-package bfs_server
+package server
 
 import (
 	"bufio"
