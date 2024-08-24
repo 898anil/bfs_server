@@ -93,7 +93,7 @@ func (s *Server) handleConnection(conn net.Conn) {
 	}
 	fmt.Println(string(buf[:n]))
 	request := parseRequest(string(buf[:n]))
-	response := s.router.Handle(request)
+	response := s.Router.Handle(request)
 	conn.Write([]byte(response.Headers["Status"] + "\r\n"))
 	for header, value := range response.Headers {
 		if header != "Status" {
