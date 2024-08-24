@@ -23,7 +23,7 @@ type Response struct {
 type Handler func(req *Request) *Response
 
 type Server struct {
-	router Router
+	Router Router
 	Port   string
 }
 
